@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, push } from "firebase/database";
+import { firebaseConfig } from "./config.js";
 import Express from "express";
+import express from "express";
 
 const app = Express();
 const portNum = 8000;
