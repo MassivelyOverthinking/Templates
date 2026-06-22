@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Firebase Message Template
+  body
+    h1 Send message to Firebase
+
+    form(action="/send-message" method="POST")
+      label(for="message") Message:
+      br
+      input#message(type="text" name="message" placeholder="Write your message here")
+      br
+      br
+      button(type="submit") Send
+
+    if success
+      p(style="color: green")= success
+
+    if error
+      p(style="color: red")= error
