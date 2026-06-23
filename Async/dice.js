@@ -34,17 +34,29 @@ async function throwXDice(num) {
 
     const array = Array(6).fill(0);
 
-    const throws = await Promise.all(
-        Array.from({ length: num }, () => throwDice())
-    );
+    //const throws = await Promise.all(
+    //    Array.from({ length: num }, () => throwDice())
+    //);
+
+    const promises = [];
+
+    for (let i = 0; i < num; i++) {
+        promises.push(throwDice());
+    }
+
+    const throws = await Promise.all(promises)
 
     throws.forEach(eyes => {
         array[eyes - 1]++;
     });
 
-    console.log(array);
-
     return array;
 }
 
-await throwXDice(10);
+const diceArray = await throwXDice(10);
+console.log(`Number of 1s: ${diceArray[0]}`)
+console.log(`Number of 2s: ${diceArray[1]}`)
+console.log(`Number of 3s: ${diceArray[2]}`)
+console.log(`Number of 4s: ${diceArray[3]}`)
+console.log(`Number of 5s: ${diceArray[4]}`)
+console.log(`Number of 6s: ${diceArray[5]}`)

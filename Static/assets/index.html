@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Users</title>
+</head>
+<body>
+  <h1>Users</h1>
+
+  <form id="user-form">
+    <div>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required />
+    </div>
+
+    <div>
+      <label for="age">Age</label>
+      <input id="age" name="age" type="number" required />
+    </div>
+
+    <div>
+      <label for="department">Department</label>
+      <input id="department" name="department" type="text" required />
+    </div>
+
+    <button type="submit">Create user</button>
+  </form>
+
+  <h2>User list</h2>
+
+  <ul id="user-list"></ul>
+
+  <script src="/script.js"></script>
+</body>
+</html>
