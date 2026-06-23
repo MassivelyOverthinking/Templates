@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        title= Exam
+
+        //- defer makes sure the script runs after the HTML has loaded
+        script(src="/script.js" defer)
+
+    body
+        h1= Lessons
+
+        if classes.length > 0
+            ul.lesson-list
+                each lesson in classes
+                    li.lesson-item(data-students=JSON.stringify(lesson.students))
+                        h2.lesson-title= lesson.name
+                        p.lesson-description= lesson.description
+
+                        //- This is where JavaScript will insert the students
+                        div.students-container
+        else
+            h1 No classes found!
