@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        title= Exam
+        link(rel="stylesheet", href="style.css")
+        script(src="/script.js") 
+    body
+        h1= Employees
+
+        if workers.length > 0
+            table 
+                thead
+                    tr
+                        th Name
+                        th Age
+                        th Department
+                tbody
+                    tr
+                        each worker in workers
+                            tr.worker-item
+                                td= worker.name
+                                td= worker.age
+                                td= worker.department
+
+                                td
+                                    form(action=`/workers/${worker.name}`, method="post")
+                                        button(type="submit") Delete
+        else
+            h1 No emplyees found!
